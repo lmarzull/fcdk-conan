@@ -16,6 +16,7 @@ class FcdkConan(ConanFile):
 
     def source(self):
         self.run("git clone https://github.com/lmarzull/fcdk.git")
+        self.run("cd fcdk && git checkout devel")
 
 
     def build(self):
