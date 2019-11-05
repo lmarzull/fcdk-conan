@@ -1,0 +1,13 @@
+{
+ "profile": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=7\nos=Linux\nos_build=Linux\n[options]\n[build_requires]\n[env]\n",
+ "graph_lock": {
+  "nodes": {
+   "90cd94c1-f683-11e9-a92f-5c514f510da6": {
+    "pref": "fcdk/1.0:9bfdcfa2bb925892ecf42e2a018a3f3529826676",
+    "options": "shared=False",
+    "path": "/home/lma/workspace/DEV/DEV/atoms/dev-libs/fcdk/conanfile.py"
+   }
+  }
+ },
+ "version": "0.1"
+}
