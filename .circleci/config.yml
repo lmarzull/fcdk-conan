@@ -31,10 +31,6 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - gcc-49
-      - gcc-5
-      - gcc-6
       - gcc-7
-      - gcc-8
 
 
