@@ -25,6 +25,6 @@ class FcdkConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure( defs = {"ENABLE_TESTING": True} )
+        cmake.configure( source_folder="fcdk", defs = {"ENABLE_TESTING": True} )
         cmake.build()
 
