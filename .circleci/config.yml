@@ -19,40 +19,11 @@ version: 2
           CONAN_CHANNEL: "channel"
           
 jobs:
-
-  gcc-49:
-      docker:
-        - image: conanio/gcc49
-      environment:
-        - CONAN_GCC_VERSIONS: "4.9"
-      <<: *conan-steps
-
-  gcc-5:
-      docker:
-        - image: conanio/gcc5
-      environment:
-        - CONAN_GCC_VERSIONS: "5"
-      <<: *conan-steps
-
-  gcc-6:
-      docker:
-        - image: conanio/gcc6
-      environment:
-        - CONAN_GCC_VERSIONS: "6"
-      <<: *conan-steps
-
   gcc-7:
       docker:
         - image: conanio/gcc7
       environment:
         - CONAN_GCC_VERSIONS: "7"
-      <<: *conan-steps
-
-  gcc-8:
-      docker:
-        - image: conanio/gcc8
-      environment:
-        - CONAN_GCC_VERSIONS: "8"
       <<: *conan-steps
 
 
