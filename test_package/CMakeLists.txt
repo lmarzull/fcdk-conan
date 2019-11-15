@@ -1,14 +1,24 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(PackageTest CXX)
+project(FcdkTest CXX)
+
+FIND_PACKAGE(gtest REQUIRED)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
-add_executable(example example.cpp)
-target_link_libraries(example ${CONAN_LIBS})
+add_executable(
+  test-fcdk
+  test-CommandLineParser.cc
+  test-demangleType.cc
+)
+target_include_directories(
+  test-fcdk
+  PRIVATE ${fcdk_INCLUDE_DIRS}
+          ${gtest_INCLUDE_DIRS}
+)
+target_link_libraries(test-fcdk ${gtest_LIBS} ${fcdk_LIBS})
 
-# CTest is a testing tool that can be used to test your project.
-# enable_testing()
-# add_test(NAME example
-#          WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-#          COMMAND example)
+enable_testing()
+add_test(NAME test-fcdk
+         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+         COMMAND test-fcdk)

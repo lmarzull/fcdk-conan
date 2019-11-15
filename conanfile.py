@@ -19,12 +19,13 @@ class FcdkConan(ConanFile):
         self.run("cd fcdk && git checkout devel")
 
 
-    def requirements(self):
-        self.requires( "gtest/1.8.1@bincrafters/stable" )
-
-
     def build(self):
         cmake = CMake(self)
-        cmake.configure( source_folder="fcdk", defs = {"ENABLE_TESTING": True} )
+        cmake.configure( source_folder="fcdk" )
         cmake.build()
 
+
+    def package(self):
+        cmake=CMake(self)
+        cmake.configure( source_folder="fcdk" )
+        cmake.install()

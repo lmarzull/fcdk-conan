@@ -1,16 +1,13 @@
 import os
-
 from conans import ConanFile, CMake, tools
 
 
 class FcdkTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    generators = "cmake"
+    generators = "cmake", "cmake_find_package", "cmake_paths"
 
     def build(self):
         cmake = CMake(self)
-        # Current dir is "test_package/build/<build_id>" and CMakeLists.txt is
-        # in "test_package"
         cmake.configure()
         cmake.build()
 
@@ -23,3 +20,6 @@ class FcdkTestConan(ConanFile):
         if not tools.cross_building(self.settings):
             os.chdir("bin")
             self.run(".%sexample" % os.sep)
+
+    def requirements(self):
+        self.requires( "gtest/1.8.1@bincrafters/stable" )
