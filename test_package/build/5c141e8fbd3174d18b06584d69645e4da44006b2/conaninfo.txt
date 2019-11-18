@@ -1,0 +1,39 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=gcc
+    compiler.libcxx=libstdc++
+    compiler.version=7
+    os=Linux
+
+[requires]
+    fcdk/1.Y.Z
+    gtest/1.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    build_type=Release
+    compiler=gcc
+    compiler.libcxx=libstdc++
+    compiler.version=7
+    os=Linux
+
+[full_requires]
+    fcdk/1.0.0:0ab9fcf606068d4347207cc29edd400ceccbc944
+    gtest/1.8.1@bincrafters/stable:4a8c5b4cd3b4d45b83fff85d53160ea02ae5fa2d
+
+[full_options]
+    fcdk:shared=False
+    gtest:build_gmock=True
+    gtest:fPIC=True
+    gtest:no_main=False
+    gtest:shared=False
+
+[recipe_hash]
+
+
+[env]
+
