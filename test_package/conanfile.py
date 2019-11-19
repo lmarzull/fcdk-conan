@@ -20,6 +20,3 @@ class FcdkTestConan(ConanFile):
         if not tools.cross_building(self.settings):
             os.chdir("bin")
             self.run(".%stest-fcdk" % os.sep)
-
-    def requirements(self):
-        self.requires( "fcdk/1.0.0" )
