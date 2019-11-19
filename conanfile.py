@@ -29,3 +29,6 @@ class FcdkConan(ConanFile):
         cmake=CMake(self)
         cmake.configure( source_folder="fcdk" )
         cmake.install()
+
+    def package_info(self):
+        self.cpp_info.libs = [ "fcdk" ]
