@@ -1,9 +1,12 @@
 #include <iostream>
-#include <fcdk/CommandLineOptionFlag.h>
+#include <fcdk/ABI.h>
+
+class A
+{};
 
 int
 main()
 {
-  FCDK::CommandLineOptionFlag show_help('h', "help", "show this help message");
-  std::cout << "Hello, world!" << std::endl;
+  std::cout << "A = '" << FCDK::demangleTypename(typeid(A).name()) << '\'' << std::endl;
+  return 0;
 }

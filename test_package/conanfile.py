@@ -11,6 +11,9 @@ class FcdkTestConan(ConanFile):
         cmake.configure()
         cmake.build()
 
+    def config_options(self):
+        self.settings.compiler.libcxx = "libstdc++11"
+
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")
         self.copy("*.dylib*", dst="bin", src="lib")
