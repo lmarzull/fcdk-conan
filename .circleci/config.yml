@@ -11,8 +11,9 @@ version: 2
     - run:
         name: Build recipe
         command: |
-          chmod +x .circleci/run.sh
-          .circleci/run.sh
+          sudo pip install --upgrade conan
+          conan user
+          conan create . user/channel -pr gcc7-x64.profile
         environment:
           CONAN_REFERENCE: "fcdk/1.0.0"
           CONAN_USERNAME: "user"
